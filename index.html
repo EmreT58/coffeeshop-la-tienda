@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffeeshop La Tienda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Een Colombiaans Reisverhaal</h1>
+        <p>Coffeeshop La Tienda</p>
+    </header>
+    <main>
+        <div id="container">
+            <img id="outsideImage" src="images/buiten-ss.png" alt="Outside of the Building" usemap="#doorMap" onclick="goInside()">
+            <img id="insideImage" src="images/binnen-ss.png" alt="Inside of the Building" style="display: none;">
+        </div>
+        
+        <!-- Define the map for the door on the outside image -->
+        <map name="doorMap">
+            <area shape="rect" coords="1013,680,925,567" alt="Click to enter the building" onclick="goInside()">
+        </map>
+    </main>
+    <footer>
+        <p>FOOTER</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
