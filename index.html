@@ -5,22 +5,27 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Coffeeshop La Tienda</title>
     <link rel="stylesheet" href="style.css">
+    <script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script>
 </head>
+
 <!-- Start met video, transitie naar sketch, typewriter animatie introductie en daarna auto scroll naar deur -->
 <!-- Vervolgens highlighted sketch met klikbare divs, als je divs klikt krijg je een witte vak met tekst te zien -->
+
 <body>
     <main>
         <div id="video-container">
             <h1>La Tienda</h1>
-            <video autoplay muted loop><source src="dooievid"></video>
+            <video autoplay muted loop><source src="images/"></video>
         </div>
 
         <div id="image-container">
             <img id="buitenkant" src="images/buiten-ss.png">
             <div id="deur-buiten" onclick="naarBinnen()"></div>
+
             <!-- <img id="binnenkant" src="images/binnen-ss.png"> -->
             <!-- binnenkant zetten op een andere pagina zodat de divs niet door elkaar heen gaan -->
             <!-- of aan de hand van displayed sketch vorige divs niet klikbaar maken -->
+
         </div>
     </main>
     <script src="script.js"></script>
