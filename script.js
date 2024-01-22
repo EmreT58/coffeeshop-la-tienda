@@ -61,11 +61,11 @@ let observer = new IntersectionObserver(entries => {
   });
 });
 
-document.querySelectorAll(".marker").forEach(element => observer.observe(element));
+function startSketch() {
+  window.location.href = "index.html";
+}
 
-document.getElementById("entrance").addEventListener("click", function() {
-  window.location.href = "binnenkant.html";
-});
+document.querySelectorAll(".marker").forEach(element => observer.observe(element));
 
 // code om mobile klikbaar te maken
 
