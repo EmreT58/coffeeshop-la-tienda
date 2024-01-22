@@ -8,8 +8,11 @@ window.onload = function() {
 var zoomer = panzoom(document.querySelector("#image-container"), {
   maxZoom: 20,
   minZoom: 1,
-  onTouch: event => event.target.classList.contains("textbox") ? false : true,
-  // onTouch: event => event.target.classList.contains("marker") ? false : true,
+  onTouch: event => event.target.classList.contains("marker") ? false : true,
+
+  // werkt niet zoals gewenst
+  // bounds: true,
+  // boundsPadding: 0.5,
 });
 
 zoomer.on("zoom", event =>   document.querySelectorAll('.marker[data-visible]').forEach(checkIfZoomed));
@@ -25,7 +28,7 @@ function checkIfZoomed(marker) {
       console.log("Activated", marker.id);
 
       // Triggers
-      document.querySelectorAll(".textbox").forEach(function(textbox) { textbox.style.opacity = 1; });
+      document.querySelectorAll(".textbox").forEach(function(textbox) { textbox.style.opacity = 0.9; });
 
     }
   } 
@@ -52,9 +55,12 @@ let observer = new IntersectionObserver(entries => { // keeps track of every mov
 
 document.querySelectorAll(".marker").forEach(element => observer.observe(element));
 
-document.getElementById("entrance-info").addEventListener("click", function() {
+function goInside() {
   window.location.href = "binnenkant.html";
-});
+}
+function goOutside() {
+  window.location.href = "buitenkant.html";
+}
 
 function playVideo() {
   var video = document.getElementById("introvideo");
