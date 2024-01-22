@@ -1,32 +1,21 @@
-window.onload = function() { // Werkt niet met viewport meta tag op mobiel
-    // Get the dimensions of the image and the viewport
-    var image = document.getElementById('buitenkant'); // Replace 'yourImageId' with the actual ID of your image
-    var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-    var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    // Calculate the scroll position to center the image
-    var scrollX = (image.width - viewportWidth) / 2;
-    var scrollY = (image.height - viewportHeight) / 2;
-
-    // Scroll to the calculated position, considering the mobile browser quirks
-    window.scrollTo({
-      top: scrollY,
-      left: scrollX,
-      behavior: 'smooth' // You can adjust this to 'auto' or 'instant' based on your preference
-    });
-  };
-
 // https://github.com/anvaka/panzoom
+
+window.onload = function() { 
+  zoomer.smoothMoveTo(-800, -200); // smooth scroll naar midden
+  fadeIn(zoomer, 900);
+};
 
 var zoomer = panzoom(document.querySelector("#image-container"), {
   maxZoom: 20,
   minZoom: 1,
+  onTouch: event => event.target.classList.contains("textbox") ? false : true,
+  // onTouch: event => event.target.classList.contains("marker") ? false : true,
 });
 
 zoomer.on("zoom", event =>   document.querySelectorAll('.marker[data-visible]').forEach(checkIfZoomed));
 
 function checkIfZoomed(marker) {
-  let treshold = 0.08; //op desktop emulatie werkt 0.3 goed maar op echte mobiel werkt 0.08 goed??
+  let treshold = 0.08;
   let markerSize = marker.getBoundingClientRect();
   if (markerSize.width / self.innerWidth > treshold) {
       if (!marker.hasAttribute("data-active")) {
@@ -55,28 +44,59 @@ function checkIfZoomed(marker) {
   }
 }
 
-let observer = new IntersectionObserver(entries => {
+let observer = new IntersectionObserver(entries => { // keeps track of every movement
   entries.forEach(entry => {
     entry.target.toggleAttribute("data-visible", entry.isIntersecting);
   });
 });
 
-function startSketch() {
-  window.location.href = "index.html";
-}
-
 document.querySelectorAll(".marker").forEach(element => observer.observe(element));
 
-// code om mobile klikbaar te maken
+document.getElementById("entrance-info").addEventListener("click", function() {
+  window.location.href = "binnenkant.html";
+});
 
-// panzoom(document.getElementById('entrance-info'), {
-//   onTouch: function(e) {
-//     // `e` - is current touch event.
+function playVideo() {
+  var video = document.getElementById("introvideo");
+  video.play();
+  document.getElementById('video-overlay').style.opacity = '0';
+  document.getElementById('skipvideo').style.display = 'block';
+}
 
-//     return false; // tells the library to not preventDefault.
-//   }
-// });
+// Fade Out Function
+function fadeOutAndRedirect(element, duration = 1000, redirectTimeout = 1000, newPage = "your-new-page.html") {
+  element.style.transition = `opacity ${duration}ms ease-in-out`;
+  element.style.opacity = 0;
 
-// document.getElementById("entrance-info").addEventListener("click", function() {
-//   window.location.href = "binnenkant.html";
-// });
+  // Set a timeout for redirecting after the fade-out
+  setTimeout(function() {
+      window.location.href = newPage;
+  }, redirectTimeout);
+}
+
+function fadeIn(element, duration = 1000) {
+  element.style.transition = `opacity ${duration}ms ease-in-out`;
+  element.style.opacity = 1;
+}
+
+function fadeOut(element, duration = 1000) {
+  element.style.transition = `opacity ${duration}ms ease-in-out`;
+  element.style.opacity = 0;
+}
+
+function videoEnd() { 
+  var video = document.getElementById("introvideo");
+  document.getElementById('video-overlay').style.opacity = '0';
+  fadeOutAndRedirect(video, 900, 1000, "buitenkant.html");
+}
+
+function updateProgressBar() { // Video progressbar
+  var video = document.getElementById("introvideo");
+  var progressBar = document.getElementById("progress-bar");
+
+  var progress = (video.currentTime / video.duration) * 100;
+  progressBar.style.width = progress + "%";
+}
+
+
+

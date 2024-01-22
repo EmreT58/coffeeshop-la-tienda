@@ -3,31 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buitenkant - La Tienda</title>
+    <title>La Tienda Video</title>
     <link rel="stylesheet" href="style.css">
     <script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script>
 </head>
-
-<!-- Start met video, transitie naar sketch, typewriter animatie introductie en daarna auto scroll naar deur -->
-<!-- Vervolgens highlighted sketch met klikbare divs, als je divs klikt krijg je een witte vak met tekst te zien -->
-
-<!-- <img id="binnenkant" src="images/binnen-ss.png"> -->
-<!-- binnenkant zetten op een andere pagina zodat de divs niet door elkaar heen gaan -->
-<!-- of aan de hand van displayed sketch vorige divs niet klikbaar maken -->
-
 <body>
-    <div id="image-container">
-        <div id="binnenkant"><img src="images/buiten-ss.png"></div>
-        <div class="marker" id="entrance"></div>
-        <a href="binnenkant.html">
-            <div class="textbox" id="entrance-info">
-                <p>Enter?</p>
-                <img src="images/entrance.png" alt="entrance icon">
-            </div>
-        </a>
-
+    <div id="video-container">
+            <section id="video-overlay">
+                <img id="logo" src="images/jan-profile.jpg" alt="Logo Jan Rothuizen">
+                <h2>Coffeeshop: La Tienda</h2>
+                <h4>Een Colombiaans Reisverhaal</h4>
+                <i>by Jan Rothuizen</i>
+                <button onclick="playVideo()">START REIS</button>
+            </section>
+        <video id="introvideo" onended="videoEnd()" ontimeupdate="updateProgressBar()"><source src="images/latienda-buiten.mp4"></video>
+        <p id="skipvideo" onclick="videoEnd()">Skip this video ></p>
+        <div id="progress-bar"></div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
-
