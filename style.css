@@ -43,24 +43,7 @@ html {
     pointer-events: none;
 }
 /* ===- Markers -=== */
-#magnetron {
-    left: 900px;
-    top: 320px;
-    width: 50px;
-    height: 100px;
-}
-#magnetron-janinfo {
-    left: 900px;
-    top: 260px;
-    opacity: 0; /* Initially set to 0 for invisibility */
-    transition: opacity 0.5s ease-in-out;
-}
-#magnetron-extrainfo {
-    left: 900px;
-    top: 420px;
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out;
-}
+
 #entrance {
     left: 940px;
     top: 570px;
@@ -96,6 +79,82 @@ html {
 #exit-info img {
     width: 2em;
     height: auto;
+}
+/* binnen */
+#magnetron {
+    left: 900px;
+    top: 320px;
+    width: 50px;
+    height: 100px;
+}
+#magnetron-janinfo {
+    left: 900px;
+    top: 260px;
+    opacity: 0; /* Initially set to 0 for invisibility */
+    transition: opacity 0.5s ease-in-out;
+}
+#magnetron-extrainfo {
+    left: 900px;
+    top: 420px;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+}
+#radio {
+    left: 490px;
+    top: 590px;
+    width: 145px;
+    height: 115px;
+}
+#radio-muziek {
+    left: 490px;
+    top: 710px;
+    width: auto;
+}
+#radio-muziek audio {
+    width: 15em;
+}
+#carlos-kasboek {
+    left: 835px;
+    top: 790px;
+    width: 70px;
+    height: 170px;
+}
+#kasboek-info {
+    left: 835px;
+    top: 690px;
+    width: auto;
+}
+#kasboek-info img {
+    width: 15em;
+    border-radius: 20px;
+}
+#balie-video {
+    left: 1430px;
+    top: 780px;
+    width: 90px;
+    height: 300px;
+}
+#balie-info {
+    left: 1200px;
+    top: 780px;
+    width: auto;
+}
+#balie-info video {
+    width: 25em;
+    border-radius: 20px;
+}
+#madman {
+    left: 1070px;
+    top: 850px;
+    width: 100px;
+    height: 250px;
+}
+#madman-info {
+    left: 1180px;
+    top: 1000px;
+    opacity: 0; /* Initially set to 0 for invisibility */
+    transition: opacity 0.5s ease-in-out;
+    width: auto;
 }
 /* ===- Backlog -=== */
 

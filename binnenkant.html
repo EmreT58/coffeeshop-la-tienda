@@ -9,7 +9,9 @@
 </head>
 <body>
     <div id="image-container">
-        <div id="binnenkant"><img src="images/binnen-ss.png"></div>
+        <div id="binnenkant"><img src="images/binnenkant-gekleurd.png"></div>
+        
+        <!-- magnetron -->
         <div class="marker" id="magnetron"></div>
         <div class="textbox" id="magnetron-janinfo">
             <p>Two microwaves for $500 people heat their lunch</p>
@@ -18,10 +20,42 @@
             <p>Did you know 500 Colombian pesos is equal to 12 Euro cents</p>
         </div>
 
+        <!-- deur naar buiten -->
         <div class="marker" id="exit" onclick="goOutside()"></div>
         <div class="textbox" id="exit-info">
             <p>Exit?</p>
             <img src="images/tap.png" alt="entrance icon">
+        </div>
+
+<!-- ===================== nieuwe foto marker positions ======================== -->
+
+        <!-- tv radio -->
+        <div class="marker" id="radio"></div>
+        <div class="textbox" id="radio-muziek">
+            <audio controls>
+                <source src="sounds/radiomuziek.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Carlos met Kasboek -->
+        <div class="marker" id="carlos-kasboek"></div>
+        <div class="textbox" id="kasboek-info">
+            <img src="images/carlos-kasboek-horizontaal.JPG" alt="Carlos met een kasboek">
+        </div>
+
+        <!-- Balie video -->
+        <div class="marker" id="balie-video"></div>
+        <div class="textbox" id="balie-info">
+            <video controls>
+                <source src="images/balie-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+        </div>
+        <!-- Man lastigvallen -->
+        <div class="marker" id="madman"></div>
+        <div class="textbox" id="madman-info">
+            <p>Can you leave me alone please!? 😒</p>
         </div>
     </div>
     <script src="script.js"></script>

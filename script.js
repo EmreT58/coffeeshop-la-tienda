@@ -7,7 +7,7 @@ window.onload = function() {
 
 var zoomer = panzoom(document.querySelector("#image-container"), {
   maxZoom: 20,
-  minZoom: 1,
+  minZoom: 0.9,
   onTouch: event => event.target.classList.contains("marker") ? false : true,
 
   // werkt niet zoals gewenst
@@ -18,7 +18,7 @@ var zoomer = panzoom(document.querySelector("#image-container"), {
 zoomer.on("zoom", event =>   document.querySelectorAll('.marker[data-visible]').forEach(checkIfZoomed));
 
 function checkIfZoomed(marker) {
-  let treshold = 0.08;
+  let treshold = 0.1;
   let markerSize = marker.getBoundingClientRect();
   if (markerSize.width / self.innerWidth > treshold) {
       if (!marker.hasAttribute("data-active")) {
