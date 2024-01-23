@@ -13,48 +13,50 @@
         
         <!-- magnetron -->
         <div class="marker" id="magnetron"></div>
-        <div class="textbox" id="magnetron-janinfo">
-            <p>Two microwaves for $500 people heat their lunch</p>
+        <div class="popups" id="magnetron-popup1">
+            <div class="popups-header"><b>Two microwaves</b></div>
+            <p>for $500 people heat their lunch</p>
         </div>
-        <div class="textbox" id="magnetron-extrainfo">
+        <div class="popups" id="magnetron-popup2">
             <p>Did you know 500 Colombian pesos is equal to 12 Euro cents</p>
         </div>
 
         <!-- deur naar buiten -->
         <div class="marker" id="exit" onclick="goOutside()"></div>
-        <div class="textbox" id="exit-info">
+        <div class="popups" id="exit-popup1">
             <p>Exit?</p>
             <img src="images/tap.png" alt="entrance icon">
         </div>
 
-<!-- ===================== nieuwe foto marker positions ======================== -->
-
         <!-- tv radio -->
-        <div class="marker" id="radio"></div>
-        <div class="textbox" id="radio-muziek">
-            <audio controls>
+        <div class="marker" id="radio" onclick="playRadio()"></div>
+        <div class="popups" id="radio-popup1">
+            Tap the TV to listen to Cuenta Conmigo 🎵
+            <audio id="radioplayer">
                 <source src="sounds/radiomuziek.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
 
+        <!-- Balie video -->
+        <div class="marker" id="balie" onclick="playBalie()"></div>
+        <div class="popups" id="balie-popup1" >
+            Tap the visitor to meet the owners 👬
+            <video id="balieplayer">
+                <source src="images/balie-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
         <!-- Carlos met Kasboek -->
-        <div class="marker" id="carlos-kasboek"></div>
-        <div class="textbox" id="kasboek-info">
+        <div class="marker" id="kasboek"></div>
+        <div class="popups" id="kasboek-popup1">
             <img src="images/carlos-kasboek-horizontaal.JPG" alt="Carlos met een kasboek">
         </div>
 
-        <!-- Balie video -->
-        <div class="marker" id="balie-video"></div>
-        <div class="textbox" id="balie-info">
-            <video controls>
-                <source src="images/balie-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-        </div>
         <!-- Man lastigvallen -->
         <div class="marker" id="madman"></div>
-        <div class="textbox" id="madman-info">
+        <div class="popups" id="madman-popup1">
             <p>Can you leave me alone please!? 😒</p>
         </div>
     </div>

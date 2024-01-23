@@ -17,30 +17,40 @@ html {
 }
 .marker[data-visible] {
     border: 1px solid red;
-    transition: 0.3s ease-in-out; /* Added transition for smoother color changes */
+    transition: 0.3s ease-in-out; 
 }
 .marker[data-active] { 
     border: 1px solid green;
 }
-.textbox {
+.popups {
     background-color: white;
     padding: 5px;
     position: absolute;
     font-size: 9px;
-    width: 20%;
+    min-width: 17em;
     border-radius: 15px;
-    /* border-radius: 60% 40% 40% 20% / 70% 50% 30% 25%; */
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     font-family: cursive;
     opacity: 0; 
     transition: opacity 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     flex-flow: column;
-    margin: auto;
+    justify-content: center;
     z-index: 99;
     pointer-events: none;
+}
+.popups-header {
+    position: absolute;
+    top: -11px;
+    left: 0px;
+    background-color: white;
+    color: black;
+    text-decoration: underline;
+    text-transform: capitalize;
+    padding: 5px 10px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px -10px 5px -10px rgba(0, 0, 0, 0.2);
 }
 /* ===- Markers -=== */
 
@@ -50,52 +60,53 @@ html {
     width: 50px;
     height: 120px;
 }
-#entrance-info {
+#entrance-popup1 {
     left: 950px;
     top: 580px;
     pointer-events: none;
     background-color: transparent;
     box-shadow: none;
+    width: auto !important;
 }
-#entrance-info img {
+#entrance-popup1 img {
     width: 2em;
     height: auto;
 }
 
 #exit {
-    left: 1550px;
-    top: 240px;
-    width: 200px;
-    height: 350px;
+    left: 2100px;
+    top: 740px;
+    width: 160px;
+    height: 250px;
 }
-#exit-info {
-    left: 1650px;
-    top: 400px;
+#exit-popup1 {
+    left: 2150px;
+    top: 820px;
     pointer-events: none;
     box-shadow: none;
-    width: auto;
+    width: auto !important;
     padding: 2em;
 }
-#exit-info img {
+#exit-popup1 img {
     width: 2em;
     height: auto;
 }
 /* binnen */
 #magnetron {
-    left: 900px;
-    top: 320px;
+    left: 1150px;
+    top: 720px;
     width: 50px;
-    height: 100px;
+    height: 70px;
 }
-#magnetron-janinfo {
-    left: 900px;
-    top: 260px;
-    opacity: 0; /* Initially set to 0 for invisibility */
+#magnetron-popup1 {
+    left: 1100px;
+    top: 680px;
+    opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
-#magnetron-extrainfo {
-    left: 900px;
-    top: 420px;
+#magnetron-popup2 {
+    left: 1100px;
+    top: 790px;
     opacity: 0; 
     transition: opacity 0.5s ease-in-out;
 }
@@ -105,7 +116,7 @@ html {
     width: 145px;
     height: 115px;
 }
-#radio-muziek {
+#radio-popup1{
     left: 490px;
     top: 710px;
     width: auto;
@@ -113,34 +124,34 @@ html {
 #radio-muziek audio {
     width: 15em;
 }
-#carlos-kasboek {
+#kasboek {
     left: 835px;
     top: 790px;
     width: 70px;
     height: 170px;
 }
-#kasboek-info {
+#kasboek-popup1 {
     left: 835px;
     top: 690px;
     width: auto;
 }
-#kasboek-info img {
+#kasboek-popup1 img {
     width: 15em;
     border-radius: 20px;
 }
-#balie-video {
+#balie {
     left: 1430px;
     top: 780px;
     width: 90px;
     height: 300px;
 }
-#balie-info {
-    left: 1200px;
+#balie-popup1 {
+    left: 1280px;
     top: 780px;
     width: auto;
 }
-#balie-info video {
-    width: 25em;
+#balie-popup1 video {
+    width: 15em;
     border-radius: 20px;
 }
 #madman {
@@ -149,16 +160,17 @@ html {
     width: 100px;
     height: 250px;
 }
-#madman-info {
+#madman-popup1 {
     left: 1180px;
     top: 1000px;
     opacity: 0; /* Initially set to 0 for invisibility */
     transition: opacity 0.5s ease-in-out;
     width: auto;
+    border-radius: 0px 15px 15px 15px;
 }
 /* ===- Backlog -=== */
 
-/* .textbox:before {
+/* .popups:before {
     content: "";
     position:absolute;
     top:-40px;
