@@ -14,15 +14,16 @@
         <!-- magnetron -->
         <div class="marker" id="magnetron"></div>
         <div class="popups" id="magnetron-popup1">
-            <div class="popups-header"><b>Two microwaves</b></div>
+            <div class="popups-header">Two microwaves</div>
             <p>for $500 people heat their lunch</p>
         </div>
         <div class="popups" id="magnetron-popup2">
+            <div class="popups-header">Did you know</div>
             <p>Did you know 500 Colombian pesos is equal to 12 Euro cents</p>
         </div>
 
         <!-- deur naar buiten -->
-        <div class="marker" id="exit" onclick="goOutside()"></div>
+        <div class="marker" class="interactive-marker" id="exit" onclick="goOutside()"></div>
         <div class="popups" id="exit-popup1">
             <p>Exit?</p>
             <img src="images/tap.png" alt="entrance icon">
@@ -36,6 +37,14 @@
                 <source src="sounds/radiomuziek.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
+        </div>
+        <div class="popups" id="radio-popup2">
+            <div class="popups-header">Did you know</div>
+            <!-- <p>He is a famous Puerto Rican salsa singer from the 90's. He was born in 1973</p> -->
+            <p>
+                Jerry Rivera often topped the latin charts with his music and
+                his album Cuente Conmigo became the most-sold salsa album in history.
+            </p>
         </div>
 
         <!-- Balie video -->
@@ -51,8 +60,7 @@
         <!-- Carlos met Kasboek -->
         <div class="marker" id="kasboek"></div>
         <div class="popups" id="kasboek-popup1">
-            <p>Dit is Carlos, de eigenaar.</p>
-            <p>Hij houdt een kasboek bij met bezoekers die hem nog geld schuldig zijn.</p>
+            <p>Carlos and his cash book</p>
             <img src="images/carlos-kasboek-horizontaal.JPG" alt="Carlos met een kasboek">
         </div>
 
@@ -60,6 +68,82 @@
         <div class="marker" id="madman"></div>
         <div class="popups" id="madman-popup1">
             <p>Can you leave me alone please!? 😒</p>
+        </div>
+
+        <!-- slapende jongeman -->
+        <div class="marker" id="sleepingboy"></div>
+        <div class="popups" id="sleepingboy-popup1">
+            <p>A young man sleeps on his arms</p>
+        </div>
+        
+        <!-- white plastic cup -->
+        <div class="marker" id="cup"></div>
+        <div class="popups" id="cup-popup1">
+            <p>A bright colored play tray for a white plastic cup on a white plastic table</p>
+        </div>
+        <div class="popups" id="cup-popup2">
+            <div class="popups-header">Did you know</div>
+            <p>In Colombia rich people are the ones who drink coffee at starbucks and eats at Mcdonalds</p>
+        </div>
+
+        <!-- flessen -->
+        <div class="marker" id="bottles"></div>
+        <div class="popups" id="bottles-popup1">
+            <p>This store is filled up like the hull of a cargoship</p>
+        </div>
+        <div class="popups" id="bottles-popup2">
+            <div class="popups-header">Did you know</div>
+            <p>How long can we survive on sugarwaters??</p>
+        </div>
+
+        <!-- raam -->
+        <div class="marker" id="raam"></div>
+        <div class="popups" id="raam-popup1">
+            <p>The irony of iron bars is that they make me aware of safety in a negative way</p>
+        </div>
+        <div class="popups" id="raam-popup2">
+            <div class="popups-header">Did you know</div>
+            <p>In Holland we have curtains</p>
+        </div>
+
+        <!-- wc -->
+        <div class="marker" id="toilet"></div>
+        <div class="popups" id="toilet-popup1">
+            <p>Entrance to bakery and toilet</p>
+        </div>
+        <div class="popups" id="toilet-popup2">
+            <div class="popups-header">Did you know</div>
+            <p>At the Panderia you can use the toilet even if you don't buy something. This costs $500, just like using the microwave.</p>
+        </div>
+
+        <!-- lamp -->
+        <div class="marker" id="lamp"></div>
+        <div class="popups" id="lamp-popup1">
+            <p>An ordinary fluoresent lamp flickers so fast the human eye does not see it</p>
+        </div>
+        <div class="popups" id="lamp-popup2">
+            <div class="popups-header">Did you know</div>
+            <p>This can cause stroposcobic effects, where things seem to stand still that actually move fast. Metaphorical?</p>
+        </div>
+
+        <!-- bakkerij -->
+        <div class="marker" id="bakery"></div>
+        <div class="popups" id="bakery-popup1">
+            <p>Pink glaced cookies</p>
+        </div>
+        <div class="popups" id="bakery-popup2">
+            <div class="popups-header">Did you know</div>
+            <p>Will all this bread be eaten today?</p>
+        </div>
+
+        <!-- mirrorcam -->
+        <div class="marker" id="mirrorcam"></div>
+        <div class="popups" id="mirrorcam-popup1">
+            <p>Carlos, the owner was preciously a <u>"TAXISTA"</u>. He makes the same hours here but he is happy he does not have to <u>sit</u> all the time.</p>
+        </div>
+        <div class="popups" id="mirrorcam-popup2">
+            <div class="popups-header">Did you know</div>
+            <p>This is his security camera mounted on his rear view mirror</p>
         </div>
     </div>
     <script src="script.js"></script>

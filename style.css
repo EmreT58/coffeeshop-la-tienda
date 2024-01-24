@@ -9,83 +9,114 @@ html {
     width: 100vw;
     height: 100vh;
 }
-/* =====- Zoomable areas and popups -=========================================================== */
+/* =====- Markers and Popup general styling -=========================================================== */
 .marker {
     position: absolute;
-    background-color: grey;
     opacity: 0.5;
+    border-radius: 35%;
+    transition: 0.5s ease-in-out;
 }
 .marker[data-visible] {
-    border: 1px solid red;
-    transition: 0.3s ease-in-out; 
+    background-color: rgba(0, 162, 255, 0.05);
+    transition: 0.5s ease-in-out;
 }
 .marker[data-active] { 
-    border: 1px solid green;
+    background-color: rgba(0, 162, 255, 0.1);
+    box-shadow: 0 3px 10px rgba(9, 160, 247, 0.35);
+    transition: 0.5s ease-in-out;
 }
 .popups {
     background-color: white;
     padding: 5px;
     position: absolute;
     font-size: 9px;
-    min-width: auto;
+    width: auto;
     border-radius: 1em;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     font-family: cursive;
     opacity: 0; 
-    transition: opacity 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
     flex-flow: column;
     justify-content: center;
     z-index: 99;
     pointer-events: none;
+    align-items: center;
+    max-width: 16%;
 }
 .popups-header {
     position: absolute;
     top: -11px;
     left: 0px;
     background-color: white;
-    color: black;
+    color: dodgerblue;
     text-decoration: underline;
     text-transform: capitalize;
     padding: 5px 10px;
     border-radius: 10px 10px 0 0;
     box-shadow: 0px -10px 5px -10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-family: none;
 }
-/* ===- Markers -=== */
-
+/* ===- Markers and popups specific styling -=== */
+/* entrance */
 #entrance {
     left: 1400px;
     top: 1000px;
     width: 75px;
     height: 150px;
 }
-#entrance-popup1 {
+#animation-hint {
+    position: absolute;
     left: 1420px;
-    top: 1050px;
+    top: 1062px;
+    width: 25px;
+    height: 25px;
+    animation: pulse 2s infinite;
+    border-style: dotted;
+    border: 5px double blue;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+@keyframes pulse {  /* a subtle pulsating animation to the area to hint users to zoom in */
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+#entrance-popup1 {
+    left: 1370px;
+    top: 1025px;
+    background: transparent;
+    box-shadow: none;
+    font-size: 12px;
 }
 #entrance-popup1 img {
     width: 2em;
     height: auto;
 }
-
+/* exit */
 #exit {
-    left: 2100px;
+    left: 2145px;
     top: 740px;
-    width: 160px;
+    width: 90px;
     height: 250px;
 }
 #exit-popup1 {
-    left: 2150px;
-    top: 820px;
+    left: 2100px;
+    top: 780px;
     pointer-events: none;
     padding: 2em;
+    font-size: 1em;
+    background: transparent;
+    box-shadow: none;
 }
 #exit-popup1 img {
     width: 2em;
     height: auto;
 }
-/* binnen */
+/* ===- binnen -=== */
+/* magnetron */
 #magnetron {
     left: 1150px;
     top: 720px;
@@ -95,29 +126,32 @@ html {
 #magnetron-popup1 {
     left: 1100px;
     top: 680px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 #magnetron-popup2 {
     left: 1100px;
     top: 790px;
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
+/* radio */
 #radio {
-    left: 490px;
+    left: 520px;
     top: 590px;
-    width: 145px;
+    width: 70px;
     height: 115px;
 }
 #radio-popup1{
     left: 490px;
-    top: 710px;
-    width: auto;
+    top: 550px;
+}
+#radio-popup2{
+    left: 490px;
+    top: 725px;
 }
 #radio-muziek audio {
     width: 15em;
 }
+/* carlos kasboek */
 #kasboek {
     left: 835px;
     top: 790px;
@@ -127,12 +161,12 @@ html {
 #kasboek-popup1 {
     left: 835px;
     top: 690px;
-    width: auto;
 }
 #kasboek-popup1 img {
     width: 15em;
     border-radius: 1em;
 }
+/* balie visitor/video */
 #balie {
     left: 1430px;
     top: 780px;
@@ -142,12 +176,12 @@ html {
 #balie-popup1 {
     left: 1280px;
     top: 780px;
-    width: auto;
 }
 #balie-popup1 video {
     width: 15em;
     border-radius: 1em;
 }
+/* man lastig vallen */
 #madman {
     left: 1070px;
     top: 850px;
@@ -157,25 +191,142 @@ html {
 #madman-popup1 {
     left: 1180px;
     top: 1000px;
-    opacity: 0; /* Initially set to 0 for invisibility */
-    transition: opacity 0.5s ease-in-out;
-    width: auto;
+    transition: 0.5s ease-in-out;
     border-radius: 0em 1em 1em 1em;
 }
-/* ===- Backlog -=== */
-
-/* .popups:before {
-    content: "";
-    position:absolute;
-    top:-40px;
-    left:0;
-    height:40px;
+/* slapende jongeman */
+#sleepingboy {
+    left: 1775px;
+    top: 890px;
+    width: 70px;
+    height: 50px;
+}
+#sleepingboy-popup1 {
+    left: 1750px;
+    top: 950px;
+    transition: 0.5s ease-in-out;
+}
+/* witte plastic cup */
+#cup {
+    left: 380px;
+    top: 990px;
+    width: 50px;
+    height: 50px;
+}
+#cup-popup1 {
+    left: 340px;
+    top: 890px;
+    transition: 0.5s ease-in-out;
+}
+#cup-popup2 {
+    left: 340px;
+    top: 1090px;
+    transition: 0.5s ease-in-out;
+}
+/* flessen voorraad */
+#bottles {
+    left: 320px;
+    top: 590px;
+    width: 60px;
+    height: 90px;
+}
+#bottles-popup1 {
+    left: 300px;
+    top: 530px;
+    transition: 0.5s ease-in-out;
+}
+#bottles-popup2 {
+    left: 300px;
+    top: 715px;
+    transition: 0.5s ease-in-out;
+}
+/* raam zonder gordijn */
+#raam {
+    left: 20px;
+    top: 500px;
+    width: 75px;
+    height: 500px;
+}
+#raam-popup1 {
+    left: 100px;
+    top: 700px;
+    transition: 0.5s ease-in-out;
+}
+#raam-popup2 {
+    left: 100px;
+    top: 800px;
+    transition: 0.5s ease-in-out;
+}
+/* toilet deur/sign */
+#toilet {
+    left: 770px;
+    top: 742px;
     width: 40px;
-    border-bottom-left-radius: 50%;
-    box-shadow: 0 20px 0 0 white;
-} */
+    height: 40px;
+}
+#toilet-popup1 {
+    left: 720px;
+    top: 700px;
+    transition: 0.5s ease-in-out;
+}
+#toilet-popup2 {
+    left: 720px;
+    top: 800px;
+    transition: 0.5s ease-in-out;
+}
+/* plafondlamp */
+#lamp {
+    left: 900px;
+    top: 450px;
+    width: 60px;
+    height: 90px;
+}
+#lamp-popup1 {
+    left: 860px;
+    top: 390px;
+    transition: 0.5s ease-in-out;
+}
+#lamp-popup2 {
+    left: 860px;
+    top: 560px;
+    transition: 0.5s ease-in-out;
+}
+/* bakerij koekjes/brood */
+#bakery {
+    left: 935px;
+    top: 900px;
+    width: 50px;
+    height: 90px;
+}
+#bakery-popup1 {
+    left: 830px;
+    top: 930px;
+    transition: 0.5s ease-in-out;
+}
+#bakery-popup2 {
+    left: 870px;
+    top: 1000px;
+    transition: 0.5s ease-in-out;
+}
+/* spiegel camera */
+#mirrorcam {
+    left: 1465px;
+    top: 645px;
+    width: 65px;
+    height: 50px;
+}
+#mirrorcam-popup1 {
+    left: 1430px;
+    top: 560px;
+    transition: 0.5s ease-in-out;
+}
+#mirrorcam-popup2 {
+    left: 1430px;
+    top: 710px;
+    transition: 0.5s ease-in-out;
+}
 
-/* #video-container LANDING-PAGE VIDEO */
+/* ===-Introductie video -=== */
 #video-container {
 	height: 100%;
 	display: flex;
@@ -192,6 +343,7 @@ html {
 	top: 0;
 	left: 0;
 }
+/* video overlay */
 #video-overlay {
     background-color:rgba(38, 40, 61, 0.548);
 	margin: auto;
@@ -204,7 +356,7 @@ html {
     border-radius: 25px;
     padding: 1em;
     margin-top: 5em;
-    transition: opacity 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 #logo {
 	width: 50%;
@@ -225,8 +377,9 @@ html {
     border: none;
     box-shadow: 0px 3px 15px rgba(230, 79, 19, 0.788);
     border-radius: 1em;
-    transition: opacity 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
+/* video UI */
 #skipvideo {
     position: absolute;
     bottom: 1em;
@@ -244,30 +397,8 @@ html {
     background-color: #fff;
     transition: 0.3s ease-in-out;
 }
-@media only screen and (max-width: 992px) {
-    .popups {
-        background-color: white;
-        padding: 5px;
-        position: absolute;
-        font-size: 9px;
-        min-width: 17em;
-        border-radius: 1em;
-        box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-        font-family: cursive;
-        opacity: 0; 
-        transition: opacity 0.5s ease-in-out;
-        display: flex;
-        flex-direction: column;
-        flex-flow: column;
-        justify-content: center;
-        z-index: 99;
-        pointer-events: none;
-    }
-
-}
-/* ======================================= */
-/* Wrapper to Center the Typewriter */
-#typewriter-container {
+/* Typewriter introvideo */
+#typewriter-container { /* Wrapper to Center the Typewriter */
     margin-top: 2em;
 	width: 90%;
 	height: auto;
@@ -279,22 +410,26 @@ html {
     font-size: 24px;
     position: absolute;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
-
 #typewriter-centeredbox {
 	width: 90%;
 	text-align: center;
     height: auto;
 }
-
-/* The Typewriter */
-
-#typewriter  {
-	
+#typewriter  { /* The Typewriter gets styling from javascript*/
+	color: black;
 }
-
 .cursor {
-	/* border-left: 2px solid black;
-    margin-left: 2px; */
+	border-left: 2px solid black;
+    margin-left: 2px;
 }
+/* ===- Media Query for mobile -=== */
+@media only screen and (max-width: 992px) {
+    .popups {
+        width: 35%;
+        max-width: none;
+    }
+}
+/* ======================================= */
+

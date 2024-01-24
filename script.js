@@ -4,9 +4,12 @@ window.onload = function() {
   zoomer.smoothMoveTo(-900, -350); // smooth scroll naar midden
 };
 
+
 // ===-TYPEWRITER EFFECT FOR INTRO VIDEO -===
 
-// code gebruikt van timdotcoce https://codepen.io/timdotcode/pen/bOejXp
+// code gebruikt van timdotcoce 
+// https://codepen.io/timdotcode/pen/bOejXp
+
 var typeWriterElement = document.getElementById('typewriter');
 
 var textArray = [
@@ -58,8 +61,6 @@ function StartWriter(i) {
 	}  
 };
 
-
-
 // ===- END OF TYPEWRITER -===
 
 var zoomer = panzoom(document.querySelector("#image-container"), {
@@ -67,18 +68,11 @@ var zoomer = panzoom(document.querySelector("#image-container"), {
   minZoom: 0.7,
   initialZoom: 0.75,
   onTouch: event => {
-    const popupsElement = event.target.closest("popups");
+    if (event.target.classList.contains("marker") && event.target.hasAttribute("data-active")) {
+      console.log("Activated Marker touched. Returning false.");
+      return false;
+    }
     
-    if (popupsElement) {
-      console.log("popups or its child touched. Returning false.");
-      return false;
-    }
-
-    if (event.target.classList.contains("marker")) {
-      console.log("Marker touched. Returning false.");
-      return false;
-    }
-
     console.log("Neither marker nor popups touched. Returning true.");
     return true;
   },
@@ -88,7 +82,7 @@ var zoomer = panzoom(document.querySelector("#image-container"), {
 zoomer.on("zoom", event =>   document.querySelectorAll('.marker[data-visible]').forEach(checkIfZoomed));
 
 function checkIfZoomed(marker) {
-  let treshold = 0.1;
+  let treshold = 0.085;
   let markerSize = marker.getBoundingClientRect();
 
   if (markerSize.width / self.innerWidth > treshold) {
