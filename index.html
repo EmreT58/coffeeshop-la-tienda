@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Tienda Video</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
     <script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script>
 </head>
 <body>
+    <div id="typewriter-container">
+        <div id="typewriter-centeredbox"> 
+            <span id="typewriter" data-array=""></span>
+            <span class="cursor"></span>
+        </div>
+    </div>
     <div id="video-container">
-            <section id="video-overlay">
-                <img id="logo" src="images/jan-profile.jpg" alt="Logo Jan Rothuizen">
-                <h2>Coffeeshop: La Tienda</h2>
-                <h4>Een Colombiaans Reisverhaal</h4>
-                <i>by Jan Rothuizen</i>
-                <button onclick="playVideo()">START REIS</button>
-            </section>
+        <section id="video-overlay">
+            <img id="logo" src="images/jan-profile.jpg" alt="Logo Jan Rothuizen">
+            <h2>Coffeeshop: La Tienda</h2>
+            <h4>Een Colombiaans Reisverhaal</h4>
+            <i>by Jan Rothuizen</i>
+            <button onclick="playVideo()">START REIS</button>
+        </section>
         <video id="introvideo" onended="videoEnd()" ontimeupdate="updateProgressBar()"><source src="images/latienda-buiten.mp4"></video>
         <p id="skipvideo" onclick="videoEnd()">Skip this video ></p>
         <div id="progress-bar"></div>

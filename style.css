@@ -27,8 +27,8 @@ html {
     padding: 5px;
     position: absolute;
     font-size: 9px;
-    min-width: 17em;
-    border-radius: 15px;
+    min-width: auto;
+    border-radius: 1em;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     font-family: cursive;
     opacity: 0; 
@@ -55,18 +55,14 @@ html {
 /* ===- Markers -=== */
 
 #entrance {
-    left: 940px;
-    top: 570px;
-    width: 50px;
-    height: 120px;
+    left: 1400px;
+    top: 1000px;
+    width: 75px;
+    height: 150px;
 }
 #entrance-popup1 {
-    left: 950px;
-    top: 580px;
-    pointer-events: none;
-    background-color: transparent;
-    box-shadow: none;
-    width: auto !important;
+    left: 1420px;
+    top: 1050px;
 }
 #entrance-popup1 img {
     width: 2em;
@@ -83,8 +79,6 @@ html {
     left: 2150px;
     top: 820px;
     pointer-events: none;
-    box-shadow: none;
-    width: auto !important;
     padding: 2em;
 }
 #exit-popup1 img {
@@ -137,7 +131,7 @@ html {
 }
 #kasboek-popup1 img {
     width: 15em;
-    border-radius: 20px;
+    border-radius: 1em;
 }
 #balie {
     left: 1430px;
@@ -152,7 +146,7 @@ html {
 }
 #balie-popup1 video {
     width: 15em;
-    border-radius: 20px;
+    border-radius: 1em;
 }
 #madman {
     left: 1070px;
@@ -166,7 +160,7 @@ html {
     opacity: 0; /* Initially set to 0 for invisibility */
     transition: opacity 0.5s ease-in-out;
     width: auto;
-    border-radius: 0px 15px 15px 15px;
+    border-radius: 0em 1em 1em 1em;
 }
 /* ===- Backlog -=== */
 
@@ -249,4 +243,58 @@ html {
     width: 0;
     background-color: #fff;
     transition: 0.3s ease-in-out;
+}
+@media only screen and (max-width: 992px) {
+    .popups {
+        background-color: white;
+        padding: 5px;
+        position: absolute;
+        font-size: 9px;
+        min-width: 17em;
+        border-radius: 1em;
+        box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+        font-family: cursive;
+        opacity: 0; 
+        transition: opacity 0.5s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        flex-flow: column;
+        justify-content: center;
+        z-index: 99;
+        pointer-events: none;
+    }
+
+}
+/* ======================================= */
+/* Wrapper to Center the Typewriter */
+#typewriter-container {
+    margin-top: 2em;
+	width: 90%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    font-family: 'Waiting for the Sunrise';
+    font-weight: bold;
+    font-size: 24px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#typewriter-centeredbox {
+	width: 90%;
+	text-align: center;
+    height: auto;
+}
+
+/* The Typewriter */
+
+#typewriter  {
+	
+}
+
+.cursor {
+	/* border-left: 2px solid black;
+    margin-left: 2px; */
 }
