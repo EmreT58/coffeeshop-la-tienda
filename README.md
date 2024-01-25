@@ -55,7 +55,7 @@ Website is ontworpen voor mobiel maar kan ook gebruikt worden op desktop.
 Link naar online productbiografie
 [Miro Board - Productbiografie La Tienda ](https://miro.com/app/board/uXjVNCirtk8=/)
 
-### bekende problemen
+### Bekende problemen
 - Desktop versie heeft overlappende elementen
 - Popups zijn niet clickable
 - Slechte performance tijdens interactie met markers
