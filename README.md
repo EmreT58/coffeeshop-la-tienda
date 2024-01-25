@@ -23,6 +23,8 @@ Dit is een demonstratief concept voor Colombiaans Reisverhaal 3: Coffeeshop La T
 
 ## Installatie
 
+Website maakt gebruik van [Anvaka zijn Panzoom Javascript library](https://github.com/anvaka/panzoom). (CDN installed)
+
 ### Handmatig downloaden en installeren
 1. Ga naar de GitHub-pagina van de repository: 
 Open je webbrowser en ga naar de [Github-pagina](https://github.com/EmreT58/coffeeshop-la-tienda).
@@ -53,6 +55,12 @@ Website is ontworpen voor mobiel maar kan ook gebruikt worden op desktop.
 Link naar online productbiografie
 [Miro Board - Productbiografie La Tienda ](https://miro.com/app/board/uXjVNCirtk8=/)
 
+### bekende problemen
+- Desktop versie heeft overlappende elementen
+- Popups zijn niet clickable
+- Slechte performance tijdens interactie met markers
+- Uitzoomen tijdens interactie met markers breekt de zoom boundaries
+
 ## Licentie
 
-Dit project maakt gebruik van het werk van Jan Rothuizen. Het werk van Jan Rothuizen valt onder zijn eigen auteursrecht. Raadpleeg de specifieke licentie-informatie van Jan Rothuizen voor meer details. Als er geen specifieke licentie-informatie beschikbaar is, wordt aangenomen dat toestemming is verkregen voor het gebruik van zijn werk in dit project.
+Dit project maakt gebruik van het werk van [Jan Rothuizen](https://janrothuizen.nl/contact/). Het werk van Jan Rothuizen valt onder zijn eigen auteursrecht. Raadpleeg de specifieke licentie-informatie van [Jan Rothuizen](https://janrothuizen.nl/contact/) voor meer details. Als er geen specifieke licentie-informatie beschikbaar is, wordt aangenomen dat toestemming is verkregen voor het gebruik van zijn werk in dit project.
