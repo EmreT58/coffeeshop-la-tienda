@@ -17,7 +17,7 @@ Dit is een demonstratief concept voor Colombiaans Reisverhaal 3: Coffeeshop La T
 ## Overzicht
 
 Dit project zet de op papier geschetste reisverhaal van meneer Jan Rothuizen over tot een digitale interactieve storytelling experience op mobiele telefonen. <br><br>
-De experience heeft een focus op intuitive interaction design, free exploration waardoor je geen lineair verhaal volgt en het verminderen van cognitive load door gebruik te maken van "progressive disclosure / Responsive enabling".
+De experience heeft een focus op intuitive interaction design, free exploration waardoor je geen lineair verhaal volgt en het verminderen van cognitive load door gebruik te maken van Responsive enabling".
 Dit hebben we bereikt door het gebruiken van een "pan & zoom" library zodat de gebruiker de schets kan exploreren en informatie kan progressief/responsief kan weergeven door op een element in te zoomen/focussen. <br><br>
 Dit is een demonstratief concept voor Colombiaans Reisverhaal 3: Coffeeshop La Tienda - by Jan Rothuizen
 
